@@ -1,0 +1,64 @@
+body {
+    background-color: black;
+}
+
+header {
+    background-color: gray;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+li {
+    background-color: brown;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#hero_h1 {
+    text-align: center;
+}
+
+.hero {
+    background-color: brown;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.Featured_Knowledge {
+    background-color: brown;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.projects {
+    background-color: brown;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: gray;
+    text-align: center;
+}
+
+h3 {
+    padding-top: 15px;
+}
+
+#CTA {
+    text-align: center;
+}
+
+button {
+    text-align: center;
+}
+
+#section {
+    margin: 150px;
+}
