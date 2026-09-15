@@ -6,6 +6,10 @@ DevBase is a web platform designed to organize technical knowledge, showcase sof
 
 The project is currently under active development and is being built as both a practical learning project and a central place to document my development journey.
 
+## Preview
+
+![DevBase Homepage](assets/devbase-home.png)
+
 ---
 
 ## Overview
