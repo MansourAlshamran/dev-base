@@ -1,6 +1,7 @@
-const cards = document.querySelectorAll(".card");
+// card interactive animation
+const nCards = document.querySelectorAll(".n-card");
 
-cards.forEach(card => {
+nCards.forEach(card => {
 
     card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
@@ -11,8 +12,10 @@ cards.forEach(card => {
         const xPercent = x / rect.width;
         const yPercent = y / rect.height;
 
-        const rotateY = (xPercent - 0.5) * 30;
-        const rotateX = (yPercent - 0.5) * -30;
+        const motionRange = 30
+
+        const rotateY = (xPercent - 0.5) * motionRange;
+        const rotateX = (yPercent - 0.5) * -motionRange;
 
         card.style.transform =
             `perspective(700px)
@@ -25,8 +28,7 @@ cards.forEach(card => {
     });
 
     card.addEventListener("mouseleave", () => {
-        card.style.transform =
-            "perspective(700px) scale(1) rotateX(0deg) rotateY(0deg)";
+        card.style.transform = "perspective(700px) scale(1) rotateX(0deg) rotateY(0deg)";
     });
 
 });

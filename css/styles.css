@@ -7,6 +7,8 @@ body {
     font-family: 'Sora';
 
     margin: 1rem 0 0 0;
+
+    background-color: #dfdfdf;
 }
 
 .link-button {
@@ -30,6 +32,20 @@ body {
     color: black;
 
     transition: all 0.3s ease-in-out;
+}
+
+hr {
+    grid-column: 1/-1;
+
+    border: none;
+    height: 1px;
+    background: #999;
+
+    box-shadow:
+        0 -1px 2px rgba(0, 0, 0, 0.6),
+        0 1px 1px rgba(255, 255, 255, 0.7);
+
+    margin: 3rem;
 }
 
 /*=====================================================*/
@@ -96,14 +112,6 @@ nav li {
     font-weight: bold;
 }
 
-.knowledge {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-
-    padding: 1rem 1rem 1rem 1rem;
-}
-
 .banner {
     display: flex;
     gap: 2rem;
@@ -137,7 +145,24 @@ nav li {
     object-position: 50% 50%;
 }
 
-.card {
+/*=====================================================*/
+
+.knowledge {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 1rem;
+
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.knowledge h2 {
+    grid-column: 1/-1;
+    margin-bottom: 3rem;
+    
+}
+
+.n-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -159,9 +184,12 @@ nav li {
     transition: all 0.25s ease-out;
     transform-style: preserve-3d;
     will-change: transform;
+
+    text-decoration: none;
+    color: white;
 } 
 
-.card h2 {
+.n-card h2 {
     font-size: 1.5rem;
     font-weight: bold;
 
@@ -184,7 +212,100 @@ nav li {
     background-size: cover;
 }
 
+.python-card {
+    background-image: url("../assets/images/cards/PY_Card.jpeg");
+    background-size: cover;
+}
 
+/*=====================================================*/
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 1rem;
+
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.projects h2 {
+    grid-column: 1/-1;
+    margin-bottom: 3rem;
+    
+}
+
+.p-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+
+    width: 720px;
+    aspect-ratio: 16 / 9;
+
+    border-radius: 0.5rem;
+
+    box-shadow: 12px 12px 8px -6px rgb(0 0 0 / 70%);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.25s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+
+    text-decoration: none;
+    color: black;
+}
+
+.devbase::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../assets/images/DevBase_Img.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    transition: filter 0.3s ease-in-out;
+}
+
+.nukhbah::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../assets/images/Nukhbah_Recruit_Img.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    transition: filter 0.3s ease-in-out;
+}
+
+.p-card h2 {
+    font-size: 2rem;
+
+    position: relative;
+    z-index: 1;
+
+    color: white;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.p-card p {
+    padding: 2rem;
+
+    position: relative;
+    z-index: 1;
+
+    color: white;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
 
 /*=====================================================*/
 
@@ -198,26 +319,70 @@ nav li:hover {
     color: white;
 }
 
-.card:hover {
+.n-card:hover {
     transistion: none;
 }
 
-.card::after {
+.n-card::after {
     content: "";
     position: absolute;
     inset: 0;
 
-    background: radial-gradient(
-        circle at var(--x, 50%) var(--y, 50%),
-        rgba(255, 255, 255, 0.55),
-        transparent 40%
+    background: linear-gradient(
+        135deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.5) 50%,
+        transparent 65%
+
     );
 
+    background-size: 200% 200%;
+    background-position: var(--x, 50%) var(--y, 50%);
+
     opacity: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.3s ease-in-out;
     pointer-events: none;
 }
 
-.card:hover::after {
+.n-card:hover::after {
+    opacity: 1;
+}
+
+/**/
+
+.p-card:hover {
+    transistion: none;
+}
+
+.p-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.5) 50%,
+        transparent 65%
+
+    );
+
+    background-size: 200% 200%;
+    background-position: var(--x, 50%) var(--y, 50%);
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.p-card:hover::before {
+    filter: brightness(0.6) blur(5px);
+}
+
+.p-card:hover::after {
+    opacity: 1;
+}
+
+.p-card:hover h2, .p-card:hover p {
     opacity: 1;
 }
